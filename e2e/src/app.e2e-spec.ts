@@ -9,6 +9,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to protractor-image-comparison-test!');
+    expect(page.getParagraphText()).toEqual('Hello world!');
+    expect(browser.protractorImageComparison.checkElement(element(by.css('div')), 'app')).toEqual(0);
   });
 });

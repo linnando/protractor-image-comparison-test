@@ -24,5 +24,10 @@ exports.config = {
       project: require('path').join(__dirname, './tsconfig.e2e.json')
     });
     jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: true } }));
+    const protractorImageComparison = require('protractor-image-comparison');
+    browser.protractorImageComparison = new protractorImageComparison({
+        baselineFolder: 'reference-images/baseline',
+        screenshotPath: 'reference-images'
+    });
   }
 };
